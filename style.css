@@ -107,7 +107,7 @@ header {
 }
 
 .article-img {
-    height: 200px;
+    height: 220px;
     background-size: cover;
     background-repeat:no-repeat;
     margin: 10px auto;
@@ -137,6 +137,16 @@ ss
   transition: max-height 0.2s ease-out;
 }
 
+.panel ul {
+    padding: 0 0 0 30px;
+}
+
+.panel li {
+    list-style-type: square;
+    
+    font-size: 15px;
+    line-height: 160%;
+}
 
 .footer {
     background-color: black;
