@@ -4,7 +4,7 @@
   }
 
 body, div, section, article, header, footer, ul , li ,h1 {
-    
+    color: white;
     font-family: "Noto Sans KR", sans-serif;
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@ body, div, section, article, header, footer, ul , li ,h1 {
 }
 
 body {
-    background-color: #EDEBEC;
+    background-color: rgb(29, 29, 29);
 }
 
 ol, ul {
@@ -21,40 +21,37 @@ ol, ul {
 }
 
 h1 {
-    font-size: 18px;
+    font-size: 28px;
     font-weight: 700;
     line-height: 120%;
     margin: 0 auto;
 }
 
 h3 {
-    font-size: 18px;
+    font-size: 28px;
     font-weight: 700;
     line-height: 140%;
     margin: 0 auto;
 }
 
-h4 {
-    font-size: 18px;
-    font-style: italic;
-    font-weight: 300;
-    line-height: 140%;
-    margin: 0 auto;
-}
-
 h5 {
-    font-size: 12px;
-    font-weight: 300;
-    color: gray;
-    margin: 0 auto 5px auto;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 10px auto 0 auto;
 }
 
 p {
-    color: gray;
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 160%;
-    margin: 10px auto 0 auto;
+    color: rgb(194, 194, 194);
+}
+
+button {
+    color: white;
+    background-color: unset;    
+}
+
+a {
+    color: white;
+    text-decoration: none;
 }
 
 
@@ -67,60 +64,140 @@ header {
 
 
 .container {
-    width: 520px;
+    width: 100%;
     margin: 0 auto;
-    padding: 15px 20px;
+    padding: 25px 40px;
+
+
+}
+
+.text-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.box-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 25px 40px;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
 }
 
 .introduce {
+    font-size: 18px;
+    line-height: 170%;
+    margin: 0 50px 0 0;
+    width: 300px;
     height: 250px;
 }
 
 
 .objects {
-    height: 3000px;
+    height: 300px;
 }
 
 .year {
+    width: 100%;
     color: gray;
-    background-color: #EDEBEC;
+    background-color: rgb(29, 29, 29);
     font-size: 18px;
+    line-height: 240%;
     position: sticky;
     top: 0;
-    padding: 25px 0;
+    z-index: 999;
+    padding: 30px 40px;
 }
 
 .year span {
-
     margin: 0 15px 0 0;
 }
 
 .selected-year {
-    color: black;
+    color: white;
     font-weight: 700;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid white;
+}
+
+.figure {
+    /* float: left; */
+    background-color: blueviolet;
+    background-size: cover;
+    /* opacity: 0.5; */
+    width: 33.333%;
+    height: 30vw;
+}
+
+.figcaption {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.7) 10px, rgba(0,0,0,0.6) 140px);
+    padding: 20px;
+    height: 100%;
+}
+
+.award {
+    background-image: url('./img/award.png');
+    height: 30px;
+    width: 30px;
+    float: right;
+    
+}
+
+[award-tooltip-text]:hover {
+	position: relative;
+}
+
+[award-tooltip-text]:hover:after {
+    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    -webkit-box-shadow: 0px 0px 3px 1px rgba(50, 50, 50, 0.4);
+    -moz-box-shadow: 0px 0px 3px 1px rgba(50, 50, 50, 0.4);
+    box-shadow: 0px 0px 3px 1px rgba(50, 50, 50, 0.4);
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    line-height: 130%;
+    content: attr(award-tooltip-text);
+
+    margin-bottom: 10px;
+    top: -100%;
+    left: -90px;    
+    padding: 7px 12px;
+    position: absolute;
+    
+    /* word-break: keep-all; */
+    white-space: nowrap;
+    z-index: 9999;
 }
 
 
 .article {
     margin-top: 60px;
+    
 }
 
 .article-img {
     height: 220px;
     background-size: cover;
+    background-position: center;
     background-repeat:no-repeat;
     margin: 10px auto;
 }
-ss
+
 .center {
     text-align: center;
 }
 
 .accordion {
     cursor: pointer;
-    background-color: #EDEBEC;
-    width: 100%;
     padding: 0;
     border: none;
     text-align: left;
@@ -131,8 +208,12 @@ ss
 
 .panel {
   padding: 0;
-  background-color: #EDEBEC;
+  width: 100%;
   max-height: 0;
+
+  font-size: 18px;
+  line-height: 150%;
+
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
@@ -148,44 +229,179 @@ ss
     line-height: 160%;
 }
 
+/* 푸터 */
 .footer {
     background-color: black;
+    margin-top: 40px;
     color: white;
     border-bottom: 1px solid white;
 }
 
 .footer a {
     color: white;
+    font-size: 18px;
+    line-height: 170%;
     border-bottom: 1px solid white;
 }
 
-.footer-bold {
-    font-weight: 700;
-}
 
-
-
-.nav-toggle {
+/* 팝업 */
+.pop-container {
+    width: 0%;
+    height: 100vh;
     position: fixed;
-    z-index: 16;
-    top: 20px;
-    right: 15px;
-    width: 36px;
-    height: 36px;
-    color: black;
-    margin: 0;
-    padding: 0;
-    border: none;
-    background-color: transparent;
+    top: 0;
+    z-index: 9999;
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}
+
+.pop-bg {
+    width: 0%;
+    height: 100%;
+
+    background-color: black;
+    opacity: 1;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.pop-text {
+    width: 540px;
+    margin: 100px auto 0 auto;
+    overflow-y: scroll;
+}
+
+.temp {
+    background-color: teal;
+    width: 100%;
+    height: 10vh;
+
+}
+
+.widthUp {
+    width: 50%;
+}
+
+.widthUp2 {
+    width: 100%;
 }
 
 
+@media screen and (max-width: 1140px)
+{
+    .figure {
+        float: left;
+        background-color: blueviolet;
+        background-size: cover;
+        /* opacity: 0.5; */
+        width: 50%;
+        height: 40vw;
+    }
 
-@media screen and (max-width: 520px)
+    .yearscroll {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        /* white-space: nowrap; */
+    }
+
+}
+
+
+@media screen and (max-width: 780px)
 {
     .container {
         width: 100%;
+        padding: 15px 15px;
     }
+
+    .box-container {
+        width: 100%;
+        padding: 15px 15px;
+    }
+
+    .year {
+        padding: 15px 30px;
+    }
+
+    .yearscroll {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+
+    span {
+        display: inline-block;
+    }
+
+    #tag-canvas {
+        width: auto;
+    }
+
+    .introduce {
+        font-size: 17px;
+        line-height: 170%;
+        float: left;
+        margin: 0;
+        width: 100%;
+        height: auto;
+    }
+    
+    .objects {
+        height: auto;
+    }
+
+    .figure {
+        float: left;
+        background-color: blueviolet;
+        background-size: cover;
+        /* opacity: 0.5; */
+        width: 100%;
+        height: 60vw;
+    }
+
+    .figcaption {
+        padding: 15px;
+    }
+
+
+    h1 {
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 120%;
+        margin: 0 auto;
+    }
+
+
+
+    h3 {
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 140%;
+        margin: 0 auto;
+    }
+    
+    h5 {
+        font-size: 14px;
+        font-weight: 700;
+        margin: 10px auto 0 auto;
+    }
+
+
+    .pop-text {
+        width: 100vw;
+        overflow-x: unset;
+        padding: 15px;
+
+    }
+
+
+    .widthUp {
+        width: 100%;
+    }
+    
 
 
 }
