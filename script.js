@@ -1,4 +1,38 @@
 
+$(document).ready(function(){
+
+	//Google Analytics
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	  ga('create','UA-53828044-1','auto');
+	  ga('require', 'displayfeatures');
+	  ga('send','pageview');
+  
+	// SNS LINK
+	function sharefb(url) {
+	  window.open('http://www.facebook.com/sharer/sharer.php?u=' + url);
+	};
+  
+	function sharetwit(url, text) {
+	  window.open('http://twitter.com/intent/tweet?text=' + text + '&url=' + url);
+	};
+  
+	$('#facebook').on("click", function() {
+	  sharefb('http://mabu.newscloud.sbs.co.kr/archive/index.html');
+	});
+  
+	$('#twitter').on("click", function() {
+	  sharetwit('http://mabu.newscloud.sbs.co.kr/archive/index.html', 'SBS마부작침: ');
+	});
+  });
+  
+  
+  
+
+
+
 
 //아티클 생성
 function makeArticle(data, index)
@@ -27,14 +61,14 @@ function makeArticle(data, index)
   aH5.innerHTML = data.pica;
 
 
-  const award = document.createElement("div");
+  // const award = document.createElement("div");
 
-  if(data.award != null)
-  {
-    award.classList.add('award');
-    award.setAttribute('award-tooltip-text', data.award);
-    aFigcap.appendChild(award);
-  }
+  // if(data.award != null)
+  // {
+  //   award.classList.add('award');
+  //   award.setAttribute('award-tooltip-text', data.award);
+  //   aFigcap.appendChild(award);
+  // }
 
   document.getElementById("canvas").appendChild(aFigure);
   
@@ -95,11 +129,10 @@ function InitData(keyword)
 const data = [
   {
     img : 'url("https://img.sbs.co.kr/newimg/news/20201229/201505967.jpg")',
-    title : '이거시 도시재생 \n 제목을 추가해야합니다',
+    title : '도시재생 뉴딜 \n 무엇이 문제인가',
     pica : '#도시재생 #예산',
     award : '이 달의 기자상',
-    keyword : '도시재생',
-    keyword2 : '예산',
+    keyword : '예산',
     p : '5년간 50조를 들여서 소멸하는 지방을 살리겠다는 도시재생 뉴딜사업. 하지만 실상을 파헤쳐보니 실집행률은 떨어지고 사업 선정 기준은 오락가락. 마부작침이 파헤쳐 본 도시재생 뉴딜사업의 맹점과 한계는 무엇일까?',
     linktitle1 : '3년째 지지부진…\'도시재생 뉴딜\' 무엇이 문제인가?',
     linktitle2 : '도시 쇠퇴 막는 구원투수 \'도시재생 뉴딜\'…공 던지다 만 이유는?',
@@ -113,8 +146,8 @@ const data = [
   {
     img : 'url("https://img.sbs.co.kr/newimg/news/20201229/201505960.jpg")',
     title : '유기동물에 대한 \n 슬픈 보고서',
-    pica : '유기동물',
-    keyword : '유기동물',
+    pica : '#유기동물',
+    keyword : '그 외',
     p : '대한민국 반려동물 인구 1,500만 시대. 동시에 하루에 버려지는 유기동물은 370마리. 지난 2017년 \'유기동물을 부탁해\' 시리즈에 이어 더 늦기전에 우리가 해야 할 일이 무엇일지 모색해봤다. ',
     linktitle1 : '겁먹은 눈, 잘린 다리…당신이 버린 아이들입니다',
     linktitle2 : ' ① 우리가 버린 95만 \'아이\'들',
@@ -138,7 +171,6 @@ const data = [
     pica : '#기초의회 #재산',
     award : '이 달의 기자상',
     keyword : '기초의회',
-    keyword2 : '재산',
     p : '농지를 주차장으로 쓰는가 하면, 자기 땅을 수차례 공개 언급하기까지. 부동산에 대한 애정이 많았던 지방의원들의 얘기다. 마부작침이 사회적 감시에서 살짝 비켜나 있는 그들의 재산을 탈탈 털어봤다.',
     linktitle1 : '유독 챙기던 그 땅은 \'의원님 땅\'…재산 추적해봤습니다',
     linktitle2 : '김매는 의원님들?…농사만 해야 하는 땅에 \'주차장\'',
@@ -156,10 +188,8 @@ const data = [
   {
     img : 'url("http://img.sbs.co.kr/newimg/news/20200904/201468114_700.jpg")',
     title : '또 다른 조두순들 \n 어떤 처벌 받았나',
-    pica : '민식이법',
+    pica : '#민식이법',
     keyword : '성범죄',
-    keyword2 : '판결문',
-    keyword3 : '어린이',
     p : '조두순의 출소가 다가오며 사회적 긴장은 이를 데 없이 높아졌다. 그의 범죄로부터 십수년이 지난 지금도 왜 우리는 이렇게 불안에 떨고 있을까. 마부작침이 조두순 출소 100일을 앞두고 그 이유를 짚어봤다.',
     linktitle1 : '100일 뒤 조두순 출소…전자발찌 · 알림e앱 실태는?',
     linktitle2 : '법원은 \'또 다른 조두순들\'에 어떤 판결을 내렸나',
@@ -179,9 +209,8 @@ const data = [
   {
     img : 'url("http://img.sbs.co.kr/newimg/news/20200804/201457496_700.jpg")',
     title : '의원님 식당에서 \n 몰아 쓴 1300만원',
-    pica : '기초의회 업무추진비',
+    pica : '#기초의회 #업무추진비',
     keyword : '기초의회',
-    keyword2 : '업무추진비',
     p : '지난 2년 간 전국 226개 기초의회에서 쓴 업무추진비를 탈탈 털어봤다. 정보공개청구부터 보도까지 2개월에 걸친 끈질긴 추적은 결국 잘못 쓴 업무추진비 반환까지 이끌어냈다. 데이터저널리즘 기법을 활용한 탐사보도는 과연 뭐가 달랐을까?',
     linktitle1 : '\'의원님 식당\'에서 몰아서 쓴 업무추진비…상부상조?',
     linktitle2 : '자기 집 근처에서 \'펑펑\'…의원 업무추진비는 쌈짓돈?',
@@ -203,9 +232,8 @@ const data = [
   {
     img : 'url("http://img.sbs.co.kr/newimg/news/20200713/201449807_700.jpg")',
     title : '노인 보호 못 하는 \n 노인보호구역',
-    pica : '교통 안전',
+    pica : '#교통 안전',
     keyword : '교통안전',
-    keyword2 : '어린이',
     p : '마부작침이 어린이 교통안전을 보도하면서 발견한 또 다른 교통약자, 노인. 우리나라 노인 교통사고 사망자 수는 OECD 회원국 중 압도적인 1위다. 교통안전의 사각지대인 노인보호구역을 꼼꼼하게 분석해봤다.',
     linktitle1 : '"신호 짧아"…노인 교통사고 사망 \'어린이 54배\'',
     linktitle2 : '구청마저 "여러 제한 불편"…노인보호구역 사각지대',
@@ -221,7 +249,6 @@ const data = [
     title : '민식이법이 \n 놓친 것들',
     pica : '#교통안전 #어린이',
     keyword : '교통안전',
-    keyword2 : '어린이',
     p : '현행 스쿨존 지정 기준은 시설물 위주라는 한계가 존재했다. 어린이 교통사고 현황, 어린이 유동인구, 스쿨존 지정 현황을 겹쳐서 실제 스쿨존 사각지대를 꼼꼼하게 분석해 민식이 법이 놓친 것을 짚어봤다.',
     linktitle1 : '키워드로 본 \'스쿨존 교통사고\'…사각지대도 확인',
     linktitle2 : '단속만으로 부족한 \'스쿨존 불법주정차\'…해결책은?',
@@ -244,7 +271,6 @@ const data = [
     title : '21대 국회도 586 남성이 주류 \n 당선인 300명 분석',
     pica : '#국회 #회의록',
     keyword : '국회',
-    keyword2 : '회의록',
     p : '툭하면 불출석에 장외투장까지.. 민의를 대표하는 기관인 국회가 \'열일\'하는 그날을 꿈꾸며 준비했다. 공허한 지난날의 약속부터 해외사례와 반복되는 역사까지 꼼꼼하게 짚어봤다.',
     linktitle1 : '[취재파일] 일하는 국회 "또" 연속보도, 오늘부터 시작합니다.',
     linktitle2 : '[일하는국회] 20대 국회, 한 달에 나흘만 회의했다',
@@ -259,10 +285,9 @@ const data = [
   },
   {
     img : 'url("https://img.sbs.co.kr/newimg/news/20201229/201505962.jpg")',
-    title : '불법 촐영',
+    title : '불법 촬영',
     pica : '#판결문 #성범죄',
     keyword : '성범죄',
-    keyword2 : '판결문',
     p : '전보다 나아졌을까, 아니면 나빠졌을까. 마부작침이 2019년 불법촬영 범죄 판결문을 분석했다. 벌금형이 줄어든만큼 징역형이 늘어나는 등 소기의 진전이 있었는데, 여전이 열에 아홉은 집으로 돌아갔다.',
     linktitle1 : '불법 촬영 처벌 제자리…"기소유예 받아줬다" 홍보도',
     linktitle2 : '불법촬영범 10명 중 9명은 집으로…국민은 성큼, 판결은 제자리',
@@ -276,7 +301,6 @@ const data = [
     title : '또 다른 조주빈들 \n 무슨 선고 받았나',
     pica : '#판결문 #성범죄',
     keyword : '성범죄',
-    keyword2 : '판결문',
     p : '"이른바 \'n번방\' 사건이 세간에 알려지며 가담자 대한 사회적 공분이 들끓었다. 이들은 과연 이 분노에 걸맞은 처벌을 받게 될까? 아동 청소년 성착취물을  제작∙소지한 이들이 어떤 처벌을 받았는지 확인해봤다."',
     linktitle1 : '아동 성학대 영상 소지 1심 판결문 보니…92%가 벌금형',
     linktitle2 : ' 또 다른 조주빈들 무슨 선고 받았나',
@@ -312,7 +336,7 @@ const data = [
     img : 'url("http://img.sbs.co.kr/newimg/news/20200201/201398267.gif")',
     title : '신종 코로나 감염자 현황 \n 한번에 보자',
     pica : '#코로나',
-    keyword : '코로나',
+    keyword : '그 외',
     p : '코로나19가 심상치 않다? 마부작침은 확진 초기부터 발 빠르게 확진자 현황 데이터를 수집해서 확진 경로 네트워크(network)를 비롯해 현황판, 통계 분석 등 다양한 데이터 분석 보도를 진행했다.',
     linktitle1 : '[마부작침/인터랙티브] 신종 코로나 감염자 현황, 한번에 보자',
     linktitle2 : '[마부작침/인터랙티브] 한눈에 보는 코로나19 타임라인',
@@ -331,7 +355,6 @@ const data = [
     pica : '#예산 #국회 #회의록',
     keyword : '예산',
     keyword2 : '국회',
-    keyword2 : '회의록',
     award : '이 달의 기자상, 저번 달의 기자상',
     p : '2018년부터 이어져 온 마부작침의 예산안 분석 보도. 20회 국회의 마지막 예산 심사는 달라졌을까? 국회 예산회의록 4,795페이지와 상임위 심사보고서를 근거로 예산 심사를 분석해봤다.',
     linktitle1 : '안 된다는데 슬그머니…국회 편법 예산, 올해도 2조↑',
@@ -354,7 +377,6 @@ const data = [
     title : '그들은 왜 윤창호법을 \n 두려워하지 않을까',
     pica : '#교통안전 #판결문',
     keyword : '교통안전',
-    keyword2 : '판결문',
     award : '이 달의 기자상, 저번 달의 기자상',
     p : '시행 1년을 맞은 윤창호법 과연 효과는 있었을까? 마부작침은 시행 전후 1년 치 판결문 176건을 수집해 실제로 윤창호법이 어느 정도 효과가 있었는지 분석해봤다.',
     linktitle1 : '① 윤창호법 1년…선고 형량 오히려 줄었다',
@@ -380,7 +402,7 @@ const poph3 = document.getElementById("pop-h3");
 const poph5 = document.getElementById("pop-h5");
 const popp = document.getElementById("pop-p");
 const dim = document.getElementById("dim");
-
+const popcircle = document.getElementById("popcircle");
 
 const poplink1 = document.getElementById("pop-link1");
 const poplink2 = document.getElementById("pop-link2");
@@ -398,6 +420,8 @@ const poplink10 = document.getElementById("pop-link10");
 popupclose.addEventListener("click", ()=> {
   dim.style.opacity = 0;
   dim.style.width = '0%';
+  popupbg.style.overflowY = 'hidden';
+  popupclose.style.opacity = 0;
   popupbg.classList.remove("widthUp");
   setTimeout(() => {
     popup.classList.remove("widthUp2");  
@@ -418,6 +442,7 @@ function Accordion()
       poph3.innerHTML = result;
       poph5.innerHTML = data[this.dataset.index].pica;
       popp.innerHTML = data[this.dataset.index].p;
+      popcircle.style.backgroundImage = data[this.dataset.index].img;
 
       //여기에 기사 링크들이 들어가면되려나?
       if(data[this.dataset.index].linktitle1 != null){
@@ -477,6 +502,8 @@ function Accordion()
 
       dim.style.opacity = 0.8;
       dim.style.width = '100%';
+      popupbg.style.overflowY = 'scroll';
+      popupclose.style.opacity = 1;
       popup.classList.add("widthUp2");
       setTimeout(() => {
         popupbg.classList.add("widthUp");
